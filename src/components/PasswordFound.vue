@@ -1,63 +1,48 @@
 <template>
     <v-card>
         <v-row>
-          <v-col class="space1"  cols="12" sm="12"></v-col>
-          <v-col class="space2"  cols="12" sm="12"></v-col>
+            <v-col class="space1"  cols="12" sm="12"></v-col>
+            <v-col class="space2"  cols="12" sm="12"></v-col>
             <v-col class = "imga" cols="12" sm="12">
                 <div class="container" style="clear: right">
-                        <v-img class="imag" position="25% 75%" src = @/assets/speedplanner.png aspect-ratio = "7.5">
-                        </v-img>
+                    <v-img class="imag" position="25% 75%" src = @/assets/speedplanner.png aspect-ratio = "7.5">
+                    </v-img>
                 </div>
             </v-col>
         </v-row>
         <v-col class="blue"  cols="12" sm="12"></v-col>
         <v-card-text class = "white--text">
-        <v-form v-model="isValid" class = "Inicio" >
-            <v-card-text class ="text" cols="12" sm="12">¿Olvidaste la contraseña? Tranquilo y recuerda</v-card-text>
-            <p class = "correo">Correo</p>
-            <v-text-field single-line rounded filled outlined color="white" dark
-                          v-model="remember"
-                          :rules="[v => !!v || 'Ingresar Correo']"
-                          required>
-            </v-text-field>
-            <v-col class="text-center">
-                <router-link to="/PasswordFound" style="text-decoration:none" >
-                    <v-btn outlined color="white" rounded class="Accept">Recuperar</v-btn>
-                </router-link>
-            </v-col>
-        </v-form>
+            <v-form v-model="isValid" class = "Inicio" >
+                <v-card-text class ="text" cols="12" sm="12">Se detectó una cuenta. Se envió un correo con la contraseña</v-card-text>
+
+                    <div class="text-center">
+                        <router-link to="/" style="text-decoration:none">
+                            <v-btn  outlined color="white" rounded class="Log">No recibi un correo</v-btn>
+                        </router-link>
+                        <router-link to="/" style="text-decoration:none">
+                            <v-btn outlined color="white" rounded class="Accept">Volver al Login</v-btn>
+                        </router-link>
+                    </div>
+
+            </v-form>
         </v-card-text >
         <v-col class="blue"  cols="12" sm="12"></v-col>
         <div class="default">
             <v-col class="default"  cols="12" sm="12"></v-col>
         </div>
         <v-row>
-          <v-col class="space2"  cols="12" sm="12"></v-col>
-          <v-col class="space3"  cols="12" sm="12">
-            <v-card-text class ="Domain">Adaptimize, 2019</v-card-text>
-          </v-col>
+            <v-col class="space2"  cols="12" sm="12"></v-col>
+            <v-col class="space3"  cols="12" sm="12">
+                <v-card-text class ="Domain">Adaptimize, 2019</v-card-text>
+            </v-col>
         </v-row>
     </v-card>
 </template>
 
 <script>
-    import router from '../router'
     export default {
-        name: "FindPassword",
-        data: () => ({
-                remember: null,
-
-            }
-        ),
-        methods: {
-            navigate() {
-                router.push({ name: "Login" });
-            }
-        }
-
+        name: "PasswordFound"
     }
-
-
 </script>
 
 <style scoped>
@@ -107,8 +92,8 @@
         opacity: 0.5;
     }
     .Accept{
-        width: 150px;
-        height: 40px;
+        width: 200px;
+        height: 60px;
         font-size: 18px;
         color:white;
         font-family: 'Khula', sans-serif;
@@ -118,8 +103,21 @@
         border-color: #FFFFFF;
         background-color: #3457A1;
         border-width: thick;
-        margin-left: 656px;
+        margin-left: 280px;
 
     }
-
+    .Log{
+        width: 250px;
+        height: 60px;
+        font-size: 18px;
+        color:white;
+        font-family: 'Khula', sans-serif;
+        font-style: normal;
+        border-radius: 20px;
+        border-style: solid;
+        border-color: #FFFFFF;
+        background-color: #A33D37;
+        border-width: thick;
+        margin-left: 400px;
+    }
 </style>

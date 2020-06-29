@@ -1,29 +1,19 @@
 <template>
-  <v-app>
-    <v-content>
-      <Login>
-
-      </Login>
-    </v-content>
-  </v-app>
+  <div id="app">
+    <router-view/>
+  </div>
 </template>
-
 <script>
-import Login from '@/components/Login'
-import FindPassword from '@/components/FindPassword'
 
-export default {
-  name: 'App',
+  export default {
+    name: 'App',
 
-  components: {
-    Login,
-    // eslint-disable-next-line vue/no-unused-components
-    FindPassword,
-  },
+    components: {
 
-  data: () => ({
-    //
-  }),
-};
+    },
+
+    data: () => ({
+      //
+    }),
+  };
 </script>
-
